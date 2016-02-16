@@ -1,0 +1,19 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+div {
+    display: flex;
+}
+
+article {
+    background-color: gray;
+}
+
+input {
+    display: block;
+}
+
+button {
+    display: block;
+}
