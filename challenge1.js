@@ -24,18 +24,18 @@ function addCard() {
     cardInput += "</article>";
 
     cardholderDiv.innerHTML = cardInput + cardholderDiv.innerHTML;
-    var fontColorString = "fontColor" + num;
-    var backgroundColorString = "backgroundColor" + num;
-    var deleteButtonString = "deleteButton" + num;
-    console.log("fontColorString", fontColorString);
-    fontColor = document.getElementById(fontColorString);
-    console.log("fontColor", fontColor);
-    backgroundColor = document.getElementById(backgroundColorString);
-    deleteButton = document.getElementById(deleteButtonString);
+    // var fontColorString = "fontColor" + num;
+    // var backgroundColorString = "backgroundColor" + num;
+    // var deleteButtonString = "deleteButton" + num;
+    // console.log("fontColorString", fontColorString);
+    // fontColor = document.getElementById(fontColorString);
+    // console.log("fontColor", fontColor);
+    // backgroundColor = document.getElementById(backgroundColorString);
+    // deleteButton = document.getElementById(deleteButtonString);
 
 
-    fontColor.addEventListener("focusin", setFontColor);
-    backgroundColor.addEventListener("focusin", setBackgroundColor);
+    // fontColor.addEventListener("blur", setFontColor);
+    // backgroundColor.addEventListener("focus", setBackgroundColor);
     // deleteButton.addEventListener("click", deleteCard);
 
     num++;
@@ -51,17 +51,38 @@ function createEventHandlers(cardId) {
 }
 
 
-function setFontColor() {
-    var colorYouWant = this.value;
+function setFontColor(idOfClick) {
+    var colorYouWant = document.getElementById(idOfClick).value
     console.log("colorYouWant", colorYouWant);
-    var fingersCrossed = this.parentNode;
-    console.log("fingersCrossed", fingersCrossed);
+    var somethingNew = name + idOfClick.substring(12,idOfClick.length-1)
+    console.log("somethingNew", somethingNew);
+    var fingersCrossed = document.getElementById(somethingNew)
     fingersCrossed.style.color = colorYouWant;
 }
 
-function setBackgroundColor() {
-    var colorYouWant = fontColor.value;
+function setBackgroundColor(idOfClick) {
+    var colorYouWant = document.getElementById(idOfClick).value
     console.log("colorYouWant", colorYouWant);
-    var fingersCrossed = this.parentNode;
-    console.log("fingersCrossed", fingersCrossed);
+    var somethingNew = name + idOfClick.substring(15,idOfClick.length)
+    console.log("somethingNew", somethingNew);
+    var fingersCrossed = document.getElementById(somethingNew)
+    fingersCrossed.style.backgroundColor = colorYouWant;
 }
+
+
+var holder = document.querySelector("#cardHolder")
+holder.addEventListener("click", function(e) {
+    console.log("e", e.target);
+    var clickedItem = e.target.id;
+    if (clickedItem.substring(0,4) === "font") {
+        console.log("clickedItem", clickedItem);
+        setFontColor(clickedItem)
+    } else if (clickedItem.substring(0,4) === "back") {
+        console.log("clickedItem", clickedItem);
+        setBackgroundColor(clickedItem)
+    } else if (clickedItem.substring(0,6) === "delete") {
+        console.log("clickedItem", clickedItem);
+    };
+
+    e.stopPropagation();
+});
