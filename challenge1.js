@@ -15,12 +15,14 @@ addButton.addEventListener("click", addCard);
 function addCard() {
     var inputText = document.getElementById("inputText").value;
     var cardInput = "<article class='card' id='" + name + num + "'>";
+    cardInput += "<div class='cardChangeUp'>";
     cardInput += "<input type='color' id='fontColor" + num +  "'>";
-    cardInput += "<label for='fontColor'>Font Color</label>";
+    cardInput += "<label for='fontColor'>Font</label>";
     cardInput += "<input type='color' id='backgroundColor" + num +  "'>";
-    cardInput += "<label for='backgroundColor'>Background Color</label>";
+    cardInput += "<label for='backgroundColor'>Background</label>";
     cardInput += "<button type='' id='deleteButton" + num + "'>Delete</button>";
-    cardInput += "<p>" + inputText + "</p>";
+    cardInput += "</div>";
+    cardInput += "<p id='input" + num + "'>" + inputText + "</p>";
     cardInput += "</article>";
 
     cardholderDiv.innerHTML = cardInput + cardholderDiv.innerHTML;
@@ -33,7 +35,7 @@ function addCard() {
 function setFontColor(idOfClick) {
     var colorYouWant = document.getElementById(idOfClick).value
     console.log("colorYouWant", colorYouWant);
-    var somethingNew = name + idOfClick.substring(12,idOfClick.length-1)
+    var somethingNew = "input" + idOfClick.substring(12,idOfClick.length-1)
     console.log("somethingNew", somethingNew);
     var fingersCrossed = document.getElementById(somethingNew)
     fingersCrossed.style.color = colorYouWant;
@@ -53,7 +55,6 @@ function deleteDatShit(idOfClick) {
     console.log("somethingNew", somethingNew);
     var parentOfDeleteButton = document.getElementById(somethingNew);
     cardholderDiv.removeChild(parentOfDeleteButton);
-
 }
 
 //Sets up parent container to handle click events for cards
