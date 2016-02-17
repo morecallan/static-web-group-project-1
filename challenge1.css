@@ -13,7 +13,7 @@ article {
     width: 30%;
     border-radius: 20px;
     height: 200px;
-    border: 3px solid black;
+    border: 2px solid rgba(112, 128, 144, .5);
     background-color: white;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
 }
@@ -21,7 +21,7 @@ article {
 .cardChangeUp {
     background-color:gray;
     border-radius: 17px 17px 0 0;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid rgba(0, 0, 0, .2);
 
 }
 
@@ -50,7 +50,7 @@ article {
 }
 
 .colorChangeUp > label:nth-of-type(1) {
-    margin-right: 2%;
+    margin-right: 4%;
 }
 
 .colorChangeUp > input {
@@ -79,7 +79,7 @@ article {
     font-weight: bold;
     text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
     color: #FFFFFF;
-    background-color: slategray; 
+    background-color: rgba(112, 128, 144, 1); 
 }
 
 .cardChangeUp  > button:hover {
@@ -108,7 +108,8 @@ article > p {
     width: 100%;
     background-color:gray;
     border-radius: 17px 17px 0 0;
-    border-bottom: 3px solid black;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-bottom: 2px solid rgba(0, 0, 0, .5);
     display: flex;
     justify-content: space-around;
 }

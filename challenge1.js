@@ -30,7 +30,7 @@ function addCard() {
     cardholderDiv.innerHTML = cardInput + cardholderDiv.innerHTML;
 
     num++;
-
+    document.getElementById("inputText").value = "";
 }
 
 
