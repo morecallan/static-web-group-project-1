@@ -1,20 +1,141 @@
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: slategray;
 }
 
 div {
     display: flex;
+    flex-wrap: wrap;
 }
 
 article {
-    background-color: gray;
-    margin: 20px;
+    margin: 10px;
+    width: 30%;
+    border-radius: 20px;
+    height: 200px;
+    border: 2px solid rgba(112, 128, 144, .5);
+    background-color: white;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
 }
 
-input {
-    display: block;
+.cardChangeUp {
+    background-color:gray;
+    border-radius: 17px 17px 0 0;
+    border-bottom: 2px solid rgba(0, 0, 0, .2);
+
 }
 
-button {
+.colorChangeUp {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 10px 10px 0;
+}
+
+.colorChangeUp :nth-of-type(1n):hover {
+    background-image: linear-gradient(to bottom, #696969, #708090);
+}
+
+.colorChangeUp > label {
+    display: inline-block;
+    background-color: dimgray;
+    font-size: 13px;
+    padding: 6px 8px 6px 4px;
+    border-radius: 0 5px 5px 0;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-left: none;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: .3px;
+}
+
+.colorChangeUp > label:nth-of-type(1) {
+    margin-right: 4%;
+}
+
+.colorChangeUp > input {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    padding: 0;
+    background-color: dimgray;
+    margin: 0;
+    padding-left: 4px;
+    border-radius: 5px 0 0 5px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-right: none;
+}
+
+.cardChangeUp  > button {
+    display: inline-block;
+    width: 80px;
+    margin: 10px auto 5px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    background-color: rgba(112, 128, 144, 1); 
+}
+
+.cardChangeUp  > button:hover {
+    background-color: #a5a5f3;
+    background-image: linear-gradient(to bottom, slategray, #909090);
+}
+
+article > p {
+    text-align: center;
+    text-overflow: clip;
+    white-space: wrap;
+    overflow: hidden;
+    margin: 10px;
+}
+
+
+
+
+
+/*Styles card adder*/
+
+
+
+.addCard {
     display: block;
+    width: 100%;
+    background-color:gray;
+    border-radius: 17px 17px 0 0;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-bottom: 2px solid rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.addCard > button {
+    display: inline-block;
+    width: 100px;
+    margin: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, .2);
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    background-color: slategray; 
+}
+
+#inputText {
+    display: inline-block;
+    width: 70%;
+    height: 20px;
+    padding: 7px;
+    margin: 15px;
+    border: 2px solid rgba(0, 0, 0, .2);
 }
