@@ -16,11 +16,13 @@ function addCard() {
     var inputText = document.getElementById("inputText").value;
     var cardInput = "<article class='card' id='" + name + num + "'>";
     cardInput += "<div class='cardChangeUp'>";
+    cardInput += "<div class='colorChangeUp'>";
     cardInput += "<input type='color' id='fontColor" + num +  "'>";
-    cardInput += "<label for='fontColor'>Font</label>";
+    cardInput += "<label for='fontColor" + num +"'>Font</label>";
     cardInput += "<input type='color' id='backgroundColor" + num +  "'>";
-    cardInput += "<label for='backgroundColor'>Background</label>";
-    cardInput += "<button type='' id='deleteButton" + num + "'>Delete</button>";
+    cardInput += "<label for='backgroundColor" + num + "'>Background</label>";
+    cardInput += "</div>";
+    cardInput += "<button type='' id='deleteButton" + num + "'>DELETE</button>";
     cardInput += "</div>";
     cardInput += "<p id='input" + num + "'>" + inputText + "</p>";
     cardInput += "</article>";
